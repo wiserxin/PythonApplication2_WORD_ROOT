@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import xlrd
+import os 
 
-ExcelFile=xlrd.open_workbook(r'src.xlsx')
+code_path = os.path.dirname(os.path.abspath(__file__))
+ExcelFile=xlrd.open_workbook( os.path.join(code_path,'src.xlsx'))
 
 sheet=ExcelFile.sheet_by_index(0)
 
@@ -22,11 +24,14 @@ def getM( theRoot ): #get meanings
         return str(i+1) + ': ' + roots[i] + '\n\n' + means[i] + "\n\n" + exmps[i]
     except :  
         #print(e)
-        return 'No such object ...'
+        # return 'No such object ...'
+        return 'NOP\n.....'
 
+if __name__ == '__main__':
+    print('__file__ is :',__file__)
 
-#print(getM('a'))
-#print(getM('qqq'))
+    #print(getM('a'))
+    #print(getM('qqq'))
 
 
 

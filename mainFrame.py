@@ -15,6 +15,10 @@ if __name__=='__main__':
 
     e.pack()#side = tk.TOP
     t.pack(side = tk.BOTTOM)
+    
+    # initial words in t  (text)
+    t.delete(1.0,tk.END)
+    t.insert('end',"输入词根查询\n或输入编号浏览词根列表\n\n\n======  ='w'=  ======"  )
 
     def enterAChar(event):
         print(e.get())
